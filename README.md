@@ -2,7 +2,7 @@
 
 
 ## Environment Setup
-```text
+
 pandas==1.1.1
 joblib==0.17.0
 dgl==0.6.1
