@@ -1,55 +1,37 @@
-# PRODeepSyn:Integrating Protein-Protein Interaction Network with Omics Data to Predict Anticancer Synergistic Drug Combinations
+# ProDDS: A two-stage graph-based integration paradigm (Pre-ProDDS/ProDDS) for cell-line-specific anticancer drug synergy prediction incorporating protein-protein interaction networks
 
 
-
-## Start
-
-~~large data files are maintain with git lfs, see  [train.py · Issue #1 · TOJSSE-iData/PRODeepSyn · GitHub](https://github.com/TOJSSE-iData/PRODeepSyn/issues/1) for details~~
-
-git lfs seems to be hard to use, we now provide the data in tar.gz .
-
-~~~bash
-git clone  # this repo
-cd ProDeepSyn
-# [ABANDONED] git lfs install && git-lfs pull  # git lfs
-tar -zxvf cell.tar.gz
-# install env
-pip install virtualenv
-virtualenv venv --no-site-packages --python=python3.
-# ...
-source venv/bin/activate
-pip install -r requirements.txt
-~~~
+## Environment Setup
+```text
+pandas==1.1.1
+joblib==0.17.0
+dgl==0.6.1
+matplotlib==3.3.1
+numpy==1.19.5
+torch==1.7.0
+scikit_learn==0.24.2
 
 ## Run
 
-~~~bash
-# construct drug features
-# the constructed drug features already exists
+# Process pathway data
+cd pathway
+python data_preprocessing.py
+cd ..
+
+# Extract drug features
 cd drug
 python gen_feat.py
 cd ..
 
-# construct cell line embeddings
-# the constructed cell line embeddings already exists
+# Extract cell line features
 cd cell
-## construct cell line embeddings with gene expression data, use gpu if any
-python train.py target_ge.npy nodes_ge.npy --suffix sample # --gpu 0
-## ...
-## construct cell line embeddings with mutation data, use gpu if any
-python train.py target_mut.npy nodes_mut.npy --suffix sample # --gpu 0
-## ...
-python gen_feat.py mdl_ge_128x384_sample mdl_mut_128x384_sample
-## ...
+python GATgen_feat.py
 cd ..
 
-# 5-fold nested cross-validation, use gpu if any
 cd predictor
-python cross_validate.py --batch 512 --hidden 2048 4096 8192 --lr 0.001 0.0001 0.00001 --suffix sample # --gpu 0
-## ...
-## eval cv
-python eval_cv.py cv_sample
-## ...
+
+# 5-fold nested cross-validation
+python cross_validation.py --epoch 500 --batch 512 --hidden 4096 --lr 0.0001
 ~~~
 
 
