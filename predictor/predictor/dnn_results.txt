@@ -1,0 +1,8 @@
+Deep Neural Network (DNN) Model Performance Metrics
+==================================================
+Accuracy: 0.7595
+Precision: 0.7640
+Recall: 0.8712
+F1 Score: 0.8141
+ROC AUC: 0.8331
+Kappa: 0.4778

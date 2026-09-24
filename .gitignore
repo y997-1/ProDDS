@@ -1,0 +1,18 @@
+# IDE和缓存
+.idea/
+__pycache__/
+*.pyc
+.DS_Store
+
+# 大体积数据与模型文件
+*.npy
+*.pth
+*.pt
+*.h5
+*.zip
+*.tar.gz
+*.csv
+*.xlsx
+data/
+DrugComb_data
+predictions.csv

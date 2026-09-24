@@ -1,0 +1,8 @@
+Gradient Boosting Machine (GBM) Model Performance Metrics
+========================================
+Accuracy: 0.7285
+Precision: 0.7396
+Recall: 0.8500
+F1 Score: 0.7909
+ROC AUC: 0.7914
+Kappa: 0.4089

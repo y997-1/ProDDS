@@ -1,0 +1,8 @@
+SVM Model Performance Metrics
+========================================
+Accuracy: 0.7076
+Precision: 0.7177
+Recall: 0.8509
+F1 Score: 0.7786
+ROC AUC: 0.7596
+Kappa: 0.3572

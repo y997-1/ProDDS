@@ -1,0 +1,8 @@
+Elastic Net Model Performance Metrics
+========================================
+Accuracy: 0.6977
+Precision: 0.7209
+Recall: 0.8155
+F1 Score: 0.7653
+ROC AUC: 0.7478
+Kappa: 0.3452

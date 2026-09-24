@@ -1,0 +1,8 @@
+Random Forest (RF) Model Performance Metrics
+========================================
+Accuracy: 0.7791
+Precision: 0.7951
+Recall: 0.8547
+F1 Score: 0.8238
+ROC AUC: 0.8511
+Kappa: 0.5288

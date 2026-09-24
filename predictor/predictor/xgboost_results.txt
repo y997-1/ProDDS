@@ -1,0 +1,8 @@
+XGBoost (XGB) Model Performance Metrics
+========================================
+Accuracy: 0.7765
+Precision: 0.7861
+Recall: 0.8658
+F1 Score: 0.8240
+ROC AUC: 0.8473
+Kappa: 0.5198
